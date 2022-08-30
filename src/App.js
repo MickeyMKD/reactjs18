@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { LifecycleClassComponent } from "./components/LifecycleClassComponent";
+import { LifecycleFuncComponent } from "./components/LifecycleFuncComponent";
+import { LogIn } from './components/LogIn';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [show, setShow] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button
+      style={{padding:"10px", width:"100%"}}
+        onClick={() => setShow((s) => !s)}
+      >Show/Hide</button>
+
+      {show && <LifecycleClassComponent />}
+
+      {show && <LifecycleFuncComponent />}
+
+      <LogIn />
     </div>
   );
-}
+};
 
 export default App;
