@@ -1,44 +1,39 @@
-import {useState} from "react"
+import { useState } from "react";
+import { Dropdown } from "./components/Dropdown";
 
-import { movies } from "./mock/mockData"
+const socials = [
+  {value: "facebook", name: "Facebook"},
+  {value: "insta", name: "Instagram"},
+  {value: "snap", name: "SnapChat"},
+  {value: "tiktok", name: "Tik-Tok"},
+]
 
-// import { Homework } from "./components/Homework";
-
-import {Input} from "./components/common/Input";
+const people = [
+  {value: "1", name: "Alek"},
+  {value: "2", name: "Bojan"},
+  {value: "3", name: "Stefani"},
+  {value: "4", name: "Kiko"},
+]
 
 const App = () => {
 
-  const [fieldType, setFieldType] = useState("password")
-
-  const onMouseDownHandler = () => {
-    setFieldType("text")
-  }
-
-  const onMouseUpHandler = () => {
-    setFieldType("password")
-  }
+  const [social, setSocial] = useState("")
+  const [person, setperson] = useState("")
 
   return (
     <div>
-      {/* <Homework movies={movies}/>  */}
+      <Dropdown 
+        label="Choose Social" 
+        elements={socials} 
+        onChangeDropdown={setSocial} />
 
-      <Input 
-        type="text"
-        name="username"
-        placeholder="Please enter Username" />
+      <Dropdown 
+        label="Choose Person" 
+        elements={people} 
+        onChangeDropdown={setperson} />
 
-      <Input
-            placeholder="Please enter Password"
-            name="password" 
-            type={fieldType} 
-            mouseDown={onMouseDownHandler} 
-            mouseUp={onMouseUpHandler} />
-
-      <Input
-          type="text" 
-          name="comment"
-          placeholder="Please enter Comment"
-      />
+      <p>selected social : {social}</p>
+      <p>selected person : {person}</p>
     </div>
   );
 }
