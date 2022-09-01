@@ -1,25 +1,46 @@
-import { LifecycleClassComponent } from "./components/LifecycleClassComponent";
-import { LifecycleFuncComponent } from "./components/LifecycleFuncComponent";
-import { LogIn } from './components/LogIn';
-import { useState } from 'react';
+import {useState} from "react"
+
+import { movies } from "./mock/mockData"
+
+// import { Homework } from "./components/Homework";
+
+import {Input} from "./components/common/Input";
 
 const App = () => {
-  const [show, setShow] = useState(true);
+
+  const [fieldType, setFieldType] = useState("password")
+
+  const onMouseDownHandler = () => {
+    setFieldType("text")
+  }
+
+  const onMouseUpHandler = () => {
+    setFieldType("password")
+  }
 
   return (
     <div>
-      <button
-      style={{padding:"10px", width:"100%"}}
-        onClick={() => setShow((s) => !s)}
-      >Show/Hide</button>
+      {/* <Homework movies={movies}/>  */}
 
-      {show && <LifecycleClassComponent />}
+      <Input 
+        type="text"
+        name="username"
+        placeholder="Please enter Username" />
 
-      {show && <LifecycleFuncComponent />}
+      <Input
+            placeholder="Please enter Password"
+            name="password" 
+            type={fieldType} 
+            mouseDown={onMouseDownHandler} 
+            mouseUp={onMouseUpHandler} />
 
-      <LogIn />
+      <Input
+          type="text" 
+          name="comment"
+          placeholder="Please enter Comment"
+      />
     </div>
   );
-};
+}
 
-export default App;
+export default App
