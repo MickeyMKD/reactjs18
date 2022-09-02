@@ -1,25 +1,41 @@
-import { LifecycleClassComponent } from "./components/LifecycleClassComponent";
-import { LifecycleFuncComponent } from "./components/LifecycleFuncComponent";
-import { LogIn } from './components/LogIn';
-import { useState } from 'react';
+import FuncComp from "./components/FuncComp";
+import ClassComp from "./components/ClassComp";
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Hello World !!! </h1>
+//       <p>this is my first paragraph 1</p>
+//     </div>
+//   );
+// }
 
 const App = () => {
-  const [show, setShow] = useState(true);
 
   return (
     <div>
-      <button
-      style={{padding:"10px", width:"100%"}}
-        onClick={() => setShow((s) => !s)}
-      >Show/Hide</button>
+      <h1>Hello World !!! </h1>
+      <p>this is my first paragraph 1</p>
 
-      {show && <LifecycleClassComponent />}
+      <FuncComp name="Daniel" />
 
-      {show && <LifecycleFuncComponent />}
+      <FuncComp name="Trajce" />
 
-      <LogIn />
+      <FuncComp name="Stefani" />
+
+      <FuncComp name="Milan" />
+
+      <ClassComp />
+
     </div>
   );
-};
+}
 
-export default App;
+// const App = () => (
+//     <div>
+//       <h1>Hello World !!! </h1>
+//       <p>this is my first paragraph 1</p>
+//     </div>
+//   )
+
+export default App
