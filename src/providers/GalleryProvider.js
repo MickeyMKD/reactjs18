@@ -4,11 +4,14 @@ export const GalleryContext = createContext(null)
 
 export const GalleryProvider = ({children}) => {
 
-    const name = "Neven"
+    const user = {
+        name: "Stavre",
+        lastname: "Stavridis"
+    }
 
     // returns state that can be accessed by child components
     return (
-        <GalleryContext.Provider value={name}>
+        <GalleryContext.Provider value={user}>
             {children}
         </GalleryContext.Provider>
     )
