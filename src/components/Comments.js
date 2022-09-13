@@ -1,4 +1,4 @@
-import { API_URL, COMMENTS_SIZE } from "../utils/constants"
+import { API_URL, COMMENTS_SIZE } from "./utils/constants"
 import { useEffect, useState } from "react"
 
 export const Comments = () => {

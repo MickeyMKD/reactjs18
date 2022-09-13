@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"
-import { PHOTOS_SIZE, API_URL } from "../utils/constants"
+import { PHOTOS_SIZE, API_URL } from "../components/utils/constants"
 
 export const GalleryContext = createContext(null)
 
@@ -17,6 +17,9 @@ export const GalleryProvider = ({children}) => {
           fetchData()
     },[])
 
+    const deleteImage = (imageId) => {
+        setPhotos(photos.filter( photo => photo.id !== imageId))
+    }
 
     const contextValue = {
         photos

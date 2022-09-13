@@ -12,7 +12,9 @@ export const Gallery = () => {
             {/* <pre>{JSON.stringify(photos, null, 2)}</pre> */}
 
             {photos.map( photo => (
-                <div key={photo.id} style={{display:"inline-block"}}>
+                <div 
+                onClick={() => deleteImage(photo.id)}
+                key={photo.id} style={{display:"inline-block"}}>
                     <img src={photo.thumbnailUrl} alt={photo.title} />
                 </div>
             ))}

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 
-import { API_URL, POSTS_SIZE } from "./utils/constants"
+import { API_URL, POSTS_SIZE } from "./components/utils/constants"
 
 //components
 import { Nav } from "./components/Nav"
