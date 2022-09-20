@@ -1,8 +1,12 @@
+// import { PureUnpure } from "./components/PureUnpure"
+import { Counter } from "./components/Counter";
+
 const App = () => {
 
-  return (
-    <div></div>
-  );
+  return <div>
+    <Counter />
+    {/* <PureUnpure /> */}
+  </div>
 }
 
 export default App
